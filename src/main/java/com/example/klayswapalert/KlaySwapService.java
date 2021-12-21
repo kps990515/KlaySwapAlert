@@ -26,6 +26,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.Buffer;
+import java.util.Collections;
 
 @Component
 @Slf4j
@@ -72,7 +73,11 @@ public class KlaySwapService {
 
         // WebDriver 옵션 설정
         ChromeOptions options = new ChromeOptions();
+        options.setBinary("/usr/bin/google-chrome");
         options.addArguments("--disable-popup-blocking");
+        options.addArguments("start-maximized");
+        options.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
+        options.setExperimentalOption("useAutomationExtension", false);
 
         driver = new ChromeDriver(options);
     }
