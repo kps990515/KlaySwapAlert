@@ -11,6 +11,7 @@ public class KlaySwapAlertApplication {
         SpringApplication.run(KlaySwapAlertApplication.class, args);
         KlaySwapService klaySwapService = new KlaySwapService();
         klaySwapService.crawl();
+
     }
 
 }
