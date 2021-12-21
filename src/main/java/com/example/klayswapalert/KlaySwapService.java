@@ -73,11 +73,10 @@ public class KlaySwapService {
 
         // WebDriver 옵션 설정
         ChromeOptions options = new ChromeOptions();
-        options.setBinary("/usr/bin/google-chrome");
-        options.addArguments("--disable-popup-blocking");
-        options.addArguments("start-maximized");
-        options.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
-        options.setExperimentalOption("useAutomationExtension", false);
+        options.addArguments("--headless");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--headless");
+        options.addArguments("--disable-dev-shm-usage");
 
         driver = new ChromeDriver(options);
     }
