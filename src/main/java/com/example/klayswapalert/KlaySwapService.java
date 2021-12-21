@@ -37,7 +37,7 @@ public class KlaySwapService {
     public static String WEB_DRIVER_ID = "webdriver.chrome.driver";
     public static String WEB_DRIVER_PATH = "/usr/bin/chromedriver";
     private static String url = "https://scope.klaytn.com/search/tokens-nft?key=KSLP";
-    public int count = 235;
+    public int count = 236;
     public String text;
 
     @Scheduled(cron = " */30 * * * * * ")
@@ -64,6 +64,12 @@ public class KlaySwapService {
         } finally {
             driver.close();
         }
+    }
+
+    @Scheduled(cron = " 0 0 0/1 * * * ")
+    public void healthCheck() {
+                String text2 = "살아있음";
+        funcTelegram(text2);
     }
 
     public void setDriver(){
