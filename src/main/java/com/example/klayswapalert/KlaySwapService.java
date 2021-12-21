@@ -57,6 +57,7 @@ public class KlaySwapService {
                 funcTelegram(text);
             }else{
                 text = "변동없음!!";
+                funcTelegram(text);
             }
         } catch (Exception e) {
             e.printStackTrace();
