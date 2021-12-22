@@ -9,10 +9,9 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 public class KlaySwapAlertApplication {
     public static void main(String[] args) {
         SpringApplication.run(KlaySwapAlertApplication.class, args);
-        KlaySwapService klaySwapService = new KlaySwapService();
-        klaySwapService.crawl();
-        klaySwapService.healthCheck();
-
+        KlayController klayController = new KlayController();
+        klayController.callApi();
+        klayController.healthCheck();
     }
 
 }

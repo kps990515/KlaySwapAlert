@@ -4,15 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.Value;
 import lombok.extern.slf4j.Slf4j;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.springframework.core.task.AsyncTaskExecutor;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -27,20 +18,20 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.Buffer;
 import java.util.Collections;
-
-@Component
+/*
 @Slf4j
 @NoArgsConstructor
+
 public class KlaySwapService {
     private WebDriver driver;
     private WebElement element;
     public static String WEB_DRIVER_ID = "webdriver.chrome.driver";
-    public static String WEB_DRIVER_PATH = "/usr/bin/chromedriver";
+    public static String WEB_DRIVER_PATH = "C:\\chromedriver/chromedriver.exe";
     private static String url = "https://scope.klaytn.com/search/tokens-nft?key=KSLP";
     public int count = 236;
     public String text;
 
-    @Scheduled(cron = " */30 * * * * * ")
+    @Scheduled(cron = " *//*"30 * * * * * ")
     public void crawl() {
         setDriver();
 
@@ -55,6 +46,7 @@ public class KlaySwapService {
             if(Integer.parseInt(array[5]) > count){
                 text = "비상!!!" + diff +  "개 추가됨!!";
                 count = Integer.parseInt(array[5]);
+                System.out.println(count);
                 funcTelegram(text);
             }else{
                 text = "변동없음!!";
@@ -111,3 +103,4 @@ public class KlaySwapService {
         }
     }
 }
+*/
