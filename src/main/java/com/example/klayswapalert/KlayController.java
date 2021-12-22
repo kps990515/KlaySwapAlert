@@ -84,7 +84,7 @@ public class KlayController {
             String url = "https://api-cypress.scope.klaytn.com/v1/tokens";
 
             for(int i=1; i<14; i++){
-                UriComponents uri = UriComponentsBuilder.fromHttpUrl(url+"?"+"page=" + 13 +"&key=KSLP").build();
+                UriComponents uri = UriComponentsBuilder.fromHttpUrl(url+"?"+"page=" + i +"&key=KSLP").build();
                 //이 한줄의 코드로 API를 호출해 MAP타입으로 전달 받는다.
                 ResultVO resultVO = restTemplate.getForObject(uri.toString(), ResultVO.class);
 
